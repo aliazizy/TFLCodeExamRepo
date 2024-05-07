@@ -17,19 +17,14 @@ namespace TFLWebClientTest.Service
             _roadId = roadId;
         }
 
-        public HttpResponseMessage FetchData()
+        public async Task<HttpResponseMessage> FetchData()
         {
             var response= new HttpResponseMessage()
             {
-                Content = new StringContent(Data.GetData(_roadId), Encoding.UTF8, "application/json")
+                Content = new StringContent(await Data.GetData(_roadId), Encoding.UTF8, "application/json")
             };
 
             return response;
-        }
-
-        Task<HttpResponseMessage> IFetchDataService.FetchData()
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -7,7 +7,7 @@ namespace TFLWebClientTest
     public class RoadCorridorSrviceTest
     {
         [TestMethod]
-        public async Task TestMethod1()
+        public async Task ValidRoadId()
         {
             var fetchDataService = new TestFetchDataService("A2");
             var roadCorridorService = new RoadCorridorService(fetchDataService,"A2");
@@ -17,6 +17,16 @@ namespace TFLWebClientTest
             Assert.AreEqual("good", result.StatusSeverity);
             Assert.AreEqual("No Exceptional Delays", result.StatusSeverityDescription);
             
+        }
+        [TestMethod]
+        public async Task NotValidRoadId()
+        {
+            var fetchDataService = new TestFetchDataService("A233");
+            var roadCorridorService = new RoadCorridorService(fetchDataService, "A233");
+            var result = await roadCorridorService.GetRoadCorridorAsync();
+            Assert.AreEqual(404, result.HttpStatusCode);
+           
+
         }
     }
 }

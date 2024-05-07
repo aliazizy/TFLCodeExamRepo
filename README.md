@@ -45,11 +45,11 @@ You call will return a ‘404’ response code the following response: -
 
 
 #	How to build the code
-Clone the repo to your local PC and then open the solution (TFLWebApiClient.sln) on the visual studio 2022, select Release from the header and under the build menue select Rebuild Solution.
+Clone the repo to your local PC and then open the solution (TFLWebApiClient.sln) on the visual studio 2022, update appsettings.json with your app_id and app_key then select Release from the header and under the build menue select Rebuild Solution.
 #	How to run the output
 Open CMD on Windows and navigate to the \TFLWebApiClient\bin\Release\net8.0 and run TFLWebApiClient.exe with a roadId for example TFLWebApiClient.exe A2
 #	How to run any tests that you have written
-Clone the repo to your local PC and then open the solution (TFLWebApiClient.sln) on the visual studio 2022, on the top  menue under the Test select Run All Test.
+Clone the repo to your local PC and then open the solution (TFLWebApiClient.sln) on the visual studio 2022, update appsettings.json with your app_id and app_key then on the top  menue under the Test select Run All Test.
 #	any assumptions that you’ve made
 - Using Visual studio 2022.
 - using .net8.0

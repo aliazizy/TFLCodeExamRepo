@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using TFLWebApiClient.Service;
 using TFLWebClientTest.Stub;
 
@@ -19,9 +15,10 @@ namespace TFLWebClientTest.Service
 
         public async Task<HttpResponseMessage> FetchData()
         {
+            string content = await Data.GetData(_roadId);
             var response= new HttpResponseMessage()
             {
-                Content = new StringContent(await Data.GetData(_roadId), Encoding.UTF8, "application/json")
+                Content = new StringContent(content, Encoding.UTF8, "application/json")
             };
 
             return response;

@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Linq;
 using TFLWebApiClient.Model;
 
 namespace TFLWebApiClient.Service
@@ -18,7 +19,7 @@ namespace TFLWebApiClient.Service
 
             HttpResponseMessage response = await _fetchDataService.FetchData();
             string responseBody = await response.Content.ReadAsStringAsync();
-            if (responseBody != null && response.IsSuccessStatusCode)
+            if (responseBody != null && !responseBody.Contains("httpStatusCode\": 404"))
             {
 
                 IEnumerable<RoadCorridor> roadCorridor = JsonConvert.DeserializeObject<IEnumerable<RoadCorridor>>(responseBody);

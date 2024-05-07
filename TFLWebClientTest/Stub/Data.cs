@@ -6,7 +6,8 @@ namespace TFLWebClientTest.Stub
     {
         public static async Task<string> GetData(string key)
         {
-            return await File.ReadAllTextAsync(key+".txt");
+            string content = await File.ReadAllTextAsync($".\\{key}.txt");
+            return content;
         }
 
     }

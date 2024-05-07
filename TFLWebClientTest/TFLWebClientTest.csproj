@@ -15,10 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Stub\A2.txt">
+    <Content Include="A2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Stub\A233.txt">
+    <Content Include="A233.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
